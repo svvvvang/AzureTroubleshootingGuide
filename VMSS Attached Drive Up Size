@@ -1,1 +1,21 @@
-#
+#Azure VMSS attached drive run out of space
+# To create new disk and replace the current drive
+
+1. Azure portal VMSS at lun with higher space (or useaz cli)
+2. Upgrade VMSS instance
+3. Within instance vm, initialise new disk
+4. Copy data from current disk to new disk
+5. Stop all services reading from current disk
+6. Change current disk drive path (will receive warning about application will not run properly)
+7. Change new disk drive path to current disk drive path
+8. Restart instance
+9. Services should auto start, if not start manaually.
+10. Remove current disk using az cli when confirm everything is running ok.
+
+#VMSS detach disk
+az vmss disk detach --lun 0 -g [VMMSS Resource Group] --vmss-name [VMSS Name]
+
+#VMSS atach disk
+az vmss disk attach --resource-group vmsstest --vmss-name attahedDiskupsize  --size-gb 32
+storage SKU.
+accepted values: PremiumV2_LRS, Premium_LRS, Premium_ZRS, StandardSSD_LRS, StandardSSD_ZRS, Standard_LRS, UltraSSD_LRS
