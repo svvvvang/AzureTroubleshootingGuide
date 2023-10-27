@@ -1,0 +1,13 @@
+# AZ CLI
+
+#List current subsrription
+az account show
+
+#List all subsrription
+az account list
+
+# Set subscription by Id
+az account set --subscription XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+
+# Set subscription by Name
+az account set --subscription "Company Subscription"
