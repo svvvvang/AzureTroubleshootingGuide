@@ -4,3 +4,8 @@ az network dns zone create -g xxx -n x.x.x.in-addr.arpa
 
 #set reversed DNS with ip issued by azure
 az network public-ip update --resource-group xxx --name "ip resource name" --reverse-fqdn "domain name"
+
+
+#reverse dns smtp mismatch
+#solve using exhcage powershell to alter receive connector
+Set-receiveconnector -identity "Default Frontend XX" -Banner "220 xxx.com"
