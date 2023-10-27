@@ -1,0 +1,2 @@
+#Create new zone for reverse dns
+az network dns zone create -g xxx -n x.x.x.in-addr.arpa                                      
