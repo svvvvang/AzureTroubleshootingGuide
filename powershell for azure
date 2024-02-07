@@ -11,3 +11,6 @@ Install-Module -Name Az -Repository PSGallery -Force
 
 #signin
 Connect-AzAccount
+
+#to get vmss instance version
+(Get-AzVmssVM -ResourceGroupName "xxx" -Name "xxx" -InstanceId "x").StorageProfile.ImageReference
