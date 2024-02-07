@@ -1,0 +1,13 @@
+#powershell
+#powershell is different from windows powershell
+$PSVersionTable.PSVersion
+
+#allow remote signin
+Get-ExecutionPolicy -List
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+#install az module
+Install-Module -Name Az -Repository PSGallery -Force
+
+#signin
+Connect-AzAccount
