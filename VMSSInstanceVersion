@@ -1,0 +1,4 @@
+# VMSS instance version if access through portal JSON or the az cli command "az vmss show --resource-group mecwiserg-2 --name mecwisewvmss202 --instance-id 1 --query storageProfile.imageReference.exactVersion" will only show the version when initial deployed.
+# To access the accurately either remote into windows instance and at about pc page to see the os version/ build or via the following command
+
+az vmss run-command invoke -n "resource name" --resource-group "resource group" --instance # --command-id runpowershellscript --script "cmd /c ver"
