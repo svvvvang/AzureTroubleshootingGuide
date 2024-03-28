@@ -1,0 +1,2 @@
+# Using PS to scale elasticpool
+Set-AzSqlElasticPool -ResourceGroupName xxx -ServerName xxx -ElasticPoolName xxx -Dtu 100 -DatabaseDtuMax 100 -DatabaseDtuMin 20
